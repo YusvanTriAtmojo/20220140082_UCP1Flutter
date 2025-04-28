@@ -25,6 +25,37 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    final formKey = GlobalKey<FormState>();
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 80.0),
+                  child: Center(
+                    child: Image(
+                      image: AssetImage('assets/images/pokebal.png'),
+                      height: 100,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Center(
+                  child: Text(
+                    'SELAMAT DATANG KEMBALI',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
