@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ucp1/home_page.dart';
+import 'package:ucp1/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -146,6 +148,30 @@ class _LoginPageState extends State<LoginPage> {
                           'Masuk',
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
+                      ),
+                      SizedBox(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Belum memiliki akun? Silahkan  '),
+                          Text.rich(
+                            TextSpan(
+                              text: 'Daftar disini!',
+                              style: TextStyle(color: Colors.blueAccent),
+                              recognizer:
+                                TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => const RegisterPage(),
+                                      ),
+                                    );
+                                  },
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
