@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucp1/login_page.dart';
+import 'package:ucp1/barang_page.dart';
 import 'package:ucp1/pelanggan_page.dart';
 import 'package:ucp1/piket_page.dart';
 
@@ -116,6 +117,33 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
+              ],
+            ),
+          ),
+          SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BarangPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(370, 175.5),
+              backgroundColor: Colors.blueAccent,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            child: Column(
+              children: [
+                Image(
+                  image: AssetImage('assets/images/barang.png'),
+                  height: 50,
+                ),
+                SizedBox(height: 20,),
+                Text('Barang Masuk/Keluar'),
               ],
             ),
           ),
