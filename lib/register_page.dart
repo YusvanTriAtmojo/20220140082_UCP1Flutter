@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ucp1/home_page.dart';
 
@@ -300,6 +301,25 @@ class _RegisterPageState extends State<RegisterPage> {
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
                       ),
+                      SizedBox(height: 30,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Sudah memiliki akun? Silahkan  '),
+                          Text.rich(
+                            TextSpan(
+                              text: 'Login disini!',
+                              style: TextStyle(
+                                color: Colors.blueAccent,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pop(context);
+                              },
+                            )
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
