@@ -13,6 +13,17 @@ class _LoginPageState extends State<LoginPage> {
   bool obscurepw = true;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  void liatpw() {
+    setState(() {
+      obscurepw = !obscurepw;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold();
   }
