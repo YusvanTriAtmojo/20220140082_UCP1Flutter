@@ -15,6 +15,18 @@ class _PelangganPageState extends State<PelangganPage> {
   final TextEditingController provinsiController = TextEditingController();
   final TextEditingController posController = TextEditingController();
 
+  void reset() {
+    setState(() {
+      namaController.clear();
+      emailController.clear();
+      nohpController.clear();
+      alamatController.clear();
+      alamatController.clear();
+      provinsiController.clear();
+      posController.clear();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
