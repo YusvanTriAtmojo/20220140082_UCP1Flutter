@@ -51,6 +51,68 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(fontSize: 25),
                   ),
                 ),
+                SizedBox(height: 30),
+                Text('Email'),
+                SizedBox(height: 10),
+                TextFormField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(255, 10, 86, 216),
+                        width: 3.0,
+                      ),
+                    ),
+                    prefixIcon: Icon(Icons.email),
+                  ),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Email tidak boleh kosong';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: 20),
+                Text('Password'),
+                SizedBox(height: 10),
+                TextFormField(
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(255, 10, 86, 216),
+                        width: 3.0,
+                      ),
+                    ),
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      onPressed: liatpw,
+                      icon: Icon(
+                        obscurepw ? Icons.visibility_off : Icons.visibility,
+                      ),
+                      color: Colors.grey,
+                    ),
+                  ),
+                  obscureText: obscurepw,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Password tidak boleh kosong';
+                    }
+                    return null;
+                  },
+                ),
               ],
             ),
           ),
