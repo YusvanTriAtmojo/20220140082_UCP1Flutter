@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucp1/login_page.dart';
+import 'package:ucp1/piket_page.dart';
 
 class HomePage extends StatelessWidget {
   final String email;
@@ -52,6 +53,41 @@ class HomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 }, icon: Icon(Icons.logout))
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PiketPage(email: email),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(175.5, 175.5),
+                    backgroundColor: Colors.blueAccent,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Image(
+                        image: AssetImage('assets/images/piket.png'),
+                        height: 50,
+                      ),
+                      SizedBox(height: 20,),
+                      Text('Data Piket'),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
