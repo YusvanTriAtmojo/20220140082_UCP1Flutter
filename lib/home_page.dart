@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucp1/login_page.dart';
+import 'package:ucp1/pelanggan_page.dart';
 import 'package:ucp1/piket_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -85,6 +86,33 @@ class HomePage extends StatelessWidget {
                       ),
                       SizedBox(height: 20,),
                       Text('Data Piket'),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PelangganPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(175.5, 175.5),
+                    backgroundColor: Colors.blueAccent,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Image(
+                        image: AssetImage('assets/images/pelanggan.png'),
+                        height: 50,
+                      ),
+                      SizedBox(height: 20,),
+                      Text('Data Pelanggan'),
                     ],
                   ),
                 ),
