@@ -200,6 +200,47 @@ class _BarangPageState extends State<BarangPage> {
                     return null;
                   },
                 ),
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Jumlah Barang'),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            controller: jumlahBrgController,
+                            decoration: InputDecoration(
+                              hintText: 'Jumlah Barang',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 10, 86, 216),
+                                  width: 3.0,
+                                ),
+                              ),
+                            ),
+                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Jumlah barang tidak boleh kosong';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
