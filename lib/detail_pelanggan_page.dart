@@ -64,7 +64,6 @@ class DetailPelangganPage extends StatelessWidget {
                 initialValue: alamat,
                 readOnly: true,
                 decoration: InputDecoration(
-                  hintText: 'Alamat',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
@@ -76,12 +75,6 @@ class DetailPelangganPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Alamat tidak boleh kosong';
-                  }
-                  return null;
-                },
               ),
               SizedBox(height: 20),
               Row(
@@ -96,7 +89,6 @@ class DetailPelangganPage extends StatelessWidget {
                           initialValue: provinsi,
                           readOnly: true,
                           decoration: InputDecoration(
-                            hintText: 'Provinsi',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(15),
@@ -112,12 +104,6 @@ class DetailPelangganPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Provinsi tidak boleh kosong';
-                            }
-                            return null;
-                          },
                         ),
                       ],
                     ),
@@ -133,7 +119,6 @@ class DetailPelangganPage extends StatelessWidget {
                           initialValue: kodepos,
                           readOnly: true,
                           decoration: InputDecoration(
-                            hintText: 'Kode Pos',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(15),
@@ -149,12 +134,6 @@ class DetailPelangganPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Kode Pos tidak boleh kosong';
-                            }
-                            return null;
-                          },
                         ),
                       ],
                     ),
