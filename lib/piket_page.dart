@@ -57,6 +57,34 @@ class _PiketPageState extends State<PiketPage> {
         backgroundColor: Colors.blueAccent,
         iconTheme: IconThemeData(color: Colors.white),
       ),
+      body: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Nama Anggota'),
+                SizedBox(height: 10),
+                TextFormField(
+                  initialValue: widget.email,
+                  readOnly: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
