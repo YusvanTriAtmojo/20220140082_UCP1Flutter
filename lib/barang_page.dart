@@ -15,6 +15,9 @@ class _BarangPageState extends State<BarangPage> {
 
   int totalHarga = 0;
 
+  String? jenisTfController;
+  String? jenisBrgController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
