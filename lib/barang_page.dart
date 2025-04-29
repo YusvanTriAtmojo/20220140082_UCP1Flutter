@@ -18,6 +18,9 @@ class _BarangPageState extends State<BarangPage> {
   String? jenisTfController;
   String? jenisBrgController;
 
+  final List<String> jenisTf = ['Barang Masuk', 'Barang Keluar'];
+  final List<String> jenisBrg = ['Carrier', 'Sleeping Bag', 'Tenda', 'Sepatu'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
