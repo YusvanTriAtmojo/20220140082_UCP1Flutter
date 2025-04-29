@@ -9,6 +9,10 @@ class PiketPage extends StatefulWidget {
 }
 
 class _PiketPageState extends State<PiketPage> {
+  final TextEditingController tugasController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
+  List<Map<String, dynamic>> daftarpiket = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
