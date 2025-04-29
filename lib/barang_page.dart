@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp1/bukti_page.dart';
 
 
 class BarangPage extends StatefulWidget {
@@ -276,6 +277,40 @@ class _BarangPageState extends State<BarangPage> {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(height: 50),
+                ElevatedButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      calculateTotalPrice();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (context) => BuktiPage(
+                                tanggal: tanggalController.text,
+                                transaksi: jenisTfController.toString(),
+                                barang: jenisBrgController.toString(),
+                                jumlahBrg: jumlahBrgController.text,
+                                harga: hargaController.text,
+                                totalHarga: totalHarga,
+                              ),
+                        ),
+                      );
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(1000, 60),
+                    backgroundColor: Colors.blueAccent,
+                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  child: Text(
+                    'Submit',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
                 ),
               ],
             ),
