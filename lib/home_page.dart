@@ -58,6 +58,10 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 20,),
+          Image(image: AssetImage('assets/images/promo.jpg'),
+          height: 155,),
+          SizedBox(height: 40,),
           Padding(
             padding: EdgeInsets.all(20.0),
             child: Row(
@@ -76,7 +80,7 @@ class HomePage extends StatelessWidget {
                     backgroundColor: Colors.blueAccent,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                   child: Column(
@@ -103,7 +107,7 @@ class HomePage extends StatelessWidget {
                     backgroundColor: Colors.blueAccent,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                   child: Column(
@@ -133,7 +137,7 @@ class HomePage extends StatelessWidget {
               backgroundColor: Colors.blueAccent,
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
             child: Column(
