@@ -15,6 +15,7 @@ class _PelangganPageState extends State<PelangganPage> {
   final TextEditingController alamatController = TextEditingController();
   final TextEditingController provinsiController = TextEditingController();
   final TextEditingController posController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   void reset() {
     setState(() {
@@ -26,11 +27,11 @@ class _PelangganPageState extends State<PelangganPage> {
       provinsiController.clear();
       posController.clear();
     });
+    formKey.currentState!.validate(); 
   }
 
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
         title: Padding(
@@ -275,6 +276,31 @@ class _PelangganPageState extends State<PelangganPage> {
                     child: Text(
                       'Simpan',
                       style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
+                ElevatedButton(
+                  onPressed: () {
+                  reset();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(1000, 60),
+                    backgroundColor: Colors.white,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 12,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  child: Text(
+                    'Reset',
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 16,
                     ),
                   ),
                 ),
