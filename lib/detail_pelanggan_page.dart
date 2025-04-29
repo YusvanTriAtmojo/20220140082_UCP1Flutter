@@ -22,6 +22,18 @@ class DetailPelangganPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Padding(
+          padding: EdgeInsets.only(left: 65.0),
+          child: Text(
+            'Detail $nama',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        backgroundColor: Colors.blueAccent,
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+    );
   }
 }
