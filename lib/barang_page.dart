@@ -84,6 +84,60 @@ class _BarangPageState extends State<BarangPage> {
         backgroundColor: Colors.blueAccent,
         iconTheme: IconThemeData(color: Colors.white),
       ),
+      body: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Tanggal Transaksi'),
+                SizedBox(height: 10),
+                TextFormField(
+                  controller: tanggalController,
+                  decoration: InputDecoration(
+                    hintText: 'Tanggal Transaksi',
+                    prefixIcon: 
+                    Stack(
+                      children: [
+                        Container
+                        (
+                          padding: EdgeInsets.only(left: 10, top: 8),
+                          child: Icon(Icons.calendar_today_outlined, size: 28, color: Colors.grey,)),
+                        Container(
+                          padding: EdgeInsets.only(left: 16, top: 18),
+                          child: Icon(Icons.check, size: 15, color: Colors.grey,))
+                      ]
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(255, 10, 86, 216),
+                        width: 3.0,
+                      ),
+                    ),
+                  ),
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Tanggal tidak boleh kosong';
+                    }
+                    return null;
+                  },
+                  readOnly: true,
+                  onTap: () {
+                    pilihDate();
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
