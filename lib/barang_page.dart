@@ -13,7 +13,6 @@ class BarangPage extends StatefulWidget {
 class _BarangPageState extends State<BarangPage> {
   final TextEditingController tanggalController = TextEditingController();
   final TextEditingController jumlahBrgController = TextEditingController();
-  final TextEditingController hargaController = TextEditingController();
   String hargaSatuan = "";
 
   int totalHarga = 0;
@@ -249,6 +248,7 @@ class _BarangPageState extends State<BarangPage> {
                           SizedBox(height: 10),
                           TextFormField(
                             initialValue: 'RP $hargaSatuan',
+                            readOnly: true,
                             decoration: InputDecoration(
                               hintText: 'Harga Satuan',
                               border: OutlineInputBorder(
@@ -292,7 +292,7 @@ class _BarangPageState extends State<BarangPage> {
                                 transaksi: jenisTfController.toString(),
                                 barang: jenisBrgController.toString(),
                                 jumlahBrg: jumlahBrgController.text,
-                                harga: hargaController.text,
+                                harga: hargaSatuan,
                                 totalHarga: totalHarga,
                               ),
                         ),
