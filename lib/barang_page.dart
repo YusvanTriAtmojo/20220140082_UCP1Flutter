@@ -247,33 +247,40 @@ class _BarangPageState extends State<BarangPage> {
                         children: [
                           Text('Harga Satuan'),
                           SizedBox(height: 10),
-                          TextFormField(
-                            initialValue: 'RP $hargaSatuan',
-                            readOnly: true,
-                            decoration: InputDecoration(
-                              hintText: 'Harga Satuan',
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
+                          Stack(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(left: 10, top: 12),
+                                child: Text('Rp.', style: TextStyle(fontSize: 20),)),
+                                TextFormField(
+                                  initialValue: hargaSatuan,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                    hintText: '         Harga Satuan',
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(15),
+                                      ),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(15),
+                                      ),
+                                      borderSide: BorderSide(
+                                        color: Color.fromARGB(255, 10, 86, 216),
+                                        width: 3.0,
+                                      ),
+                                    ),
+                                  ),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Harga satuan tidak boleh kosong';
+                                    }
+                                    return null;
+                                  },
                                 ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15),
-                                ),
-                                borderSide: BorderSide(
-                                  color: Color.fromARGB(255, 10, 86, 216),
-                                  width: 3.0,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Harga satuan tidak boleh kosong';
-                              }
-                              return null;
-                            },
-                          ),
+                            ],
+                          )
                         ],
                       ),
                     ),
