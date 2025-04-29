@@ -253,7 +253,7 @@ class _BarangPageState extends State<BarangPage> {
                                 padding: EdgeInsets.only(left: 10, top: 12),
                                 child: Text('Rp.', style: TextStyle(fontSize: 20),)),
                                 TextFormField(
-                                  initialValue: hargaSatuan,
+                                  initialValue: '        $hargaSatuan',
                                   readOnly: true,
                                   decoration: InputDecoration(
                                     hintText: '         Harga Satuan',
