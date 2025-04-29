@@ -239,6 +239,42 @@ class _BarangPageState extends State<BarangPage> {
                         ],
                       ),
                     ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Harga Satuan'),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            initialValue: 'RP $hargaSatuan',
+                            decoration: InputDecoration(
+                              hintText: 'Harga Satuan',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                borderSide: BorderSide(
+                                  color: Color.fromARGB(255, 10, 86, 216),
+                                  width: 3.0,
+                                ),
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Harga satuan tidak boleh kosong';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],
