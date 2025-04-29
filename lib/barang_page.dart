@@ -133,6 +133,73 @@ class _BarangPageState extends State<BarangPage> {
                     pilihDate();
                   },
                 ),
+                SizedBox(height: 20),
+                DropdownButtonFormField<String>(
+                  value: jenisTfController,
+                  decoration: InputDecoration(
+                    hintText: 'Jenis Transaksi',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                      borderSide: const BorderSide(color: Colors.blue),
+                    ),
+                  ),
+                  dropdownColor: Colors.blue[100],
+                  items:
+                      jenisTf
+                          .map(
+                            (transaksi) => DropdownMenuItem(
+                              value: transaksi,
+                              child: Text(transaksi),
+                            ),
+                          )
+                          .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      jenisTfController = value;
+                    });
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Pilih jenis transaksi';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: 20),
+                DropdownButtonFormField<String>(
+                  value: jenisBrgController,
+                  decoration: InputDecoration(
+                    hintText: 'Jenis Barang',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                      borderSide: const BorderSide(color: Colors.blue),
+                    ),
+                  ),
+                  dropdownColor: Colors.blue[100],
+                  items:
+                      jenisBrg
+                          .map(
+                            (barang) => DropdownMenuItem(
+                              value: barang,
+                              child: Text(barang),
+                            ),
+                          )
+                          .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      jenisBrgController = value;
+                    });
+                    harga();
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Pilih jenis barang';
+                    }
+                    return null;
+                  },
+                ),
               ],
             ),
           ),
