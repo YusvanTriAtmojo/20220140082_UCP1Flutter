@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp1/detail_piket_page.dart';
 
 class PiketPage extends StatefulWidget {
   final String email;
@@ -170,6 +171,65 @@ class _PiketPageState extends State<PiketPage> {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(height: 20),
+                Center(
+                  child: Text(
+                    'Daftar Tugas Piket',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(height: 10),
+                SizedBox(
+                  width: 1000,
+                  height: 400,
+                  child:
+                  daftarpiket.isEmpty
+                  ? Center(child: Text('Belum ada Data'))
+                  : ListView.builder(
+                    itemCount: daftarpiket.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                      padding: EdgeInsets.only(top: 20.0),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                  (context) => DetailPiketPage(
+                                  email: widget.email,
+                                  tanggal:
+                                    daftarpiket[index]['tanggal'],
+                                  tugas:
+                                    daftarpiket[index]['piket'],
+                                  ),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(100, 50),
+                            backgroundColor: Colors.blueAccent,
+                            foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment:
+                              MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(daftarpiket[index]['piket']),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
