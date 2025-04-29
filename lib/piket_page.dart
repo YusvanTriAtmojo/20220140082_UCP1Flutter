@@ -34,6 +34,17 @@ class _PiketPageState extends State<PiketPage> {
     }
   }
 
+  void addData() {
+    setState(() {
+      daftarpiket.add({
+        'piket': tugasController.text,
+        'tanggal': dateController.text,
+      });
+      tugasController.clear();
+      dateController.clear();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
