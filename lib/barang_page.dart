@@ -4,7 +4,8 @@ import 'package:ucp1/bukti_page.dart';
 
 
 class BarangPage extends StatefulWidget {
-  const BarangPage({super.key});
+  final String email;
+  const BarangPage({super.key, required this.email,});
 
   @override
   State<BarangPage> createState() => _BarangPageState();
@@ -294,6 +295,7 @@ class _BarangPageState extends State<BarangPage> {
                                 jumlahBrg: jumlahBrgController.text,
                                 harga: hargaSatuan,
                                 totalHarga: totalHarga,
+                                emailAsli: widget.email,
                               ),
                         ),
                       );
