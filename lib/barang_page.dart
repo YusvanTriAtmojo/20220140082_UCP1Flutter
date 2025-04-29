@@ -38,6 +38,15 @@ class _BarangPageState extends State<BarangPage> {
     });
   }
 
+  void calculateTotalPrice() {
+    int harga = int.tryParse(hargaSatuan) ?? 0;
+    int jumlah = int.tryParse(jumlahBrgController.text) ?? 0;
+
+    setState(() {
+      totalHarga = (jumlah * harga);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
