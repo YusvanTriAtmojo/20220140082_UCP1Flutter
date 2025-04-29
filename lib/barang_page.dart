@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 
 class BarangPage extends StatefulWidget {
   const BarangPage({super.key});
@@ -45,6 +47,26 @@ class _BarangPageState extends State<BarangPage> {
     setState(() {
       totalHarga = (jumlah * harga);
     });
+  }
+
+  void pilihDate() async {
+    DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2200),
+    );
+    if (picked != null) {
+      String formattedDate = DateFormat(
+        'EEEE, dd MMMM yyyy',
+        'id_ID',
+      ).format(picked);
+      setState(() {
+        tanggalController.text = formattedDate.toString();
+      });
+    } else {
+      print('Pilih Tanggal');
+    }
   }
 
   @override
