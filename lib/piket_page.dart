@@ -119,6 +119,58 @@ class _PiketPageState extends State<PiketPage> {
                     pilihDate();
                   },
                 ),
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: tugasController,
+                        decoration: InputDecoration(
+                          hintText: 'Tugas Piket',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            borderSide: BorderSide(
+                              color: Color.fromARGB(255, 10, 86, 216),
+                              width: 3.0,
+                            ),
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Tugas tidak boleh kosong';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
+                          addData();
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(180, 50),
+                        backgroundColor: Colors.blueAccent,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 24,
+                          vertical: 12,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      child: Text(
+                        'Tambah',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
