@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1/detail_pelanggan_page.dart';
 
 class PelangganPage extends StatefulWidget {
   const PelangganPage({super.key});
@@ -237,6 +238,45 @@ class _PelangganPageState extends State<PelangganPage> {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(height: 50),
+                Center(
+                child: 
+                  ElevatedButton(
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                              (context) => DetailPelangganPage(
+                                nama: namaController.text,
+                                email: emailController.text,
+                                nohp: nohpController.text,
+                                alamat: alamatController.text,
+                                provinsi: provinsiController.text,
+                                kodepos: posController.text,
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(1000, 60),
+                      backgroundColor: Colors.blueAccent,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 12,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    child: Text(
+                      'Simpan',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
                 ),
               ],
             ),
