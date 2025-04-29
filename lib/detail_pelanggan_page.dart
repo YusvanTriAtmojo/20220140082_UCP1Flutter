@@ -71,8 +71,8 @@ class DetailPelangganPage extends StatelessWidget {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                     borderSide: BorderSide(
-                      color: Color.fromARGB(255, 10, 86, 216),
-                      width: 3.0,
+                      color: Colors.grey,
+                      width: 1.0,
                     ),
                   ),
                 ),
@@ -107,8 +107,8 @@ class DetailPelangganPage extends StatelessWidget {
                                 Radius.circular(15),
                               ),
                               borderSide: BorderSide(
-                                color: Color.fromARGB(255, 10, 86, 216),
-                                width: 3.0,
+                                color: Colors.grey,
+                                width: 1.0,
                               ),
                             ),
                           ),
@@ -144,8 +144,8 @@ class DetailPelangganPage extends StatelessWidget {
                                 Radius.circular(15),
                               ),
                               borderSide: BorderSide(
-                                color: Color.fromARGB(255, 10, 86, 216),
-                                width: 3.0,
+                                color: Colors.grey,
+                                width: 1.0,
                               ),
                             ),
                           ),
